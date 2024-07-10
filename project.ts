@@ -65,7 +65,7 @@ import {
           file: "./dist/index.js",
           handlers: [
             {
-              handler: "handleTransferSingleNORENLog",
+              handler: "handleTransferSingleLog",
               kind: EthereumHandlerKind.Event,
               filter: {
                 topics: [

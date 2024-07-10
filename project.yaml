@@ -29,7 +29,7 @@ dataSources:
     mapping:
       file: ./dist/index.js
       handlers:
-        - handler: handleTransferSingleNORENLog
+        - handler: handleTransferSingleLog
           kind: ethereum/LogHandler
           filter:
             topics:
