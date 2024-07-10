@@ -7,36 +7,36 @@ description: >-
   SubQuery project
 runner:
   node:
-    name: "@subql/node-ethereum"
-    version: ">=3.0.0"
+    name: '@subql/node-ethereum'
+    version: '>=3.0.0'
   query:
-    name: "@subql/query"
-    version: "*"
+    name: '@subql/query'
+    version: '*'
 schema:
   file: ./schema.graphql
 network:
-  chainId: "5039"
-  endpoint: [https://subnets.avax.network/onigiri/testnet/rpc]
+  chainId: '5039'
+  endpoint: 'https://subnets.avax.network/onigiri/testnet/rpc'
 dataSources:
   - kind: ethereum/Runtime
     startBlock: 4165
     options:
       abi: NOREN
-      address: "0xeEca3Ac0E1D340B4F6220e4E5811Bd969d548598"
+      address: '0xeEca3Ac0E1D340B4F6220e4E5811Bd969d548598'
     assets:
       NOREN:
         file: ./abis/NOREN.json
     mapping:
       file: ./dist/index.js
       handlers:
-        - handler: handleTransferSingleLog
+        - handler: handleTransferSingleNORENLog
           kind: ethereum/LogHandler
           filter:
             topics:
-              - "TransferSingle(address,address,address,uint256,uint256)"
+              - 'TransferSingle(address,address,address,uint256,uint256)'
         - handler: handleNorenHolder
           kind: ethereum/LogHandler
           filter:
             topics:
-              - "TransferSingle(address,address,address,uint256,uint256)"
-repository: "https://github.com/subquery/ethereum-subql-starter"
+              - 'TransferSingle(address,address,address,uint256,uint256)'
+repository: 'https://github.com/subquery/ethereum-subql-starter'
